@@ -162,6 +162,7 @@ public class MainActivity extends BindingActivity<ActivityMainBinding, MainActiv
         FragmentViewModel viewModel = getFragment().getViewModel();
         if (viewModel instanceof IOnBackPressed)
             ( (IOnBackPressed) viewModel).onBackPressed();
+        onSwitchFromFragment();
     }
 
     @Override
@@ -192,6 +193,8 @@ public class MainActivity extends BindingActivity<ActivityMainBinding, MainActiv
         }
         if (fragment instanceof BookmarksFragment) {
             Log.d("CDA", "From BookmarksFragment");
+            fab.setVisibility(View.VISIBLE);
+            ((BookmarksFragmentVM) fragment.getViewModel()).onClose(navigationView);
             findViewById(R.id.toolbar).setVisibility(View.VISIBLE);
             findViewById(R.id.toolbar_bm).setVisibility(View.GONE);
         }
