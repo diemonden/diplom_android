@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="doc_edit_media"
+            type="com.example.pd_mobile_java_v1.doc.objects.DocMedia"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{doc_edit_media.isSelected? @drawable/itemline_selected : @drawable/itemline}"
+        tools:ignore="WebViewLayout">
+
+        <EditText
+            android:id="@+id/textView11"
+            android:hint="Вставьте HTML-код встраиваемого элемента"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:textIsSelectable="true"
+            android:text="@={doc_edit_media.src}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView11"
+            app:loadMediaUrl="@{doc_edit_media.getSrc}" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

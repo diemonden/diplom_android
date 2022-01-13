@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="doc_edit_text"
+            type="com.example.pd_mobile_java_v1.doc.objects.DocText"
+            />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{doc_edit_text.isSelected? @drawable/itemline_selected : @drawable/itemline}">
+
+        <EditText
+            android:id="@+id/textView8"
+            android:hint="Введите текст абзаца"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textIsSelectable="true"
+            android:text="@={doc_edit_text.text}"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
