@@ -1,4 +1,4 @@
 # diplom_android
-pd_mobile - server
-res - xml layouts & resources
-java - app logic
+pd_mobile - server <br>
+res - xml layouts & resources <br>
+java - app logic <br>
