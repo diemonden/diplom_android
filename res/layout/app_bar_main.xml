@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.pd_mobile_java_v1.main.MainActivityVM"
+            />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            <LinearLayout
+                android:id="@+id/toolbar_home"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/ib_close"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onClose"
+                    app:srcCompat="@drawable/outline_close_black_24" />
+
+                <TextView
+                    android:id="@+id/count_text"
+                    android:layout_width="74dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <ImageButton
+                    android:id="@+id/ib_share"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onShare"
+                    app:srcCompat="@drawable/outline_share_black_24"
+                    tools:srcCompat="@drawable/outline_share_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_add_bm"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onBookmarks"
+                    app:srcCompat="@drawable/twotone_grade_black_24"
+                    tools:srcCompat="@drawable/twotone_grade_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_rename"
+                    android:layout_width="58dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onRename"
+                    app:srcCompat="@drawable/baseline_drive_file_rename_outline_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_delete"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onDelete"
+                    app:srcCompat="@drawable/outline_delete_forever_black_24"
+                    tools:srcCompat="@drawable/outline_delete_forever_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_move"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onMove"
+                    app:srcCompat="@drawable/outline_drive_file_move_black_24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/toolbar_bm"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/ib_close_bm"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onClose"
+                    app:srcCompat="@drawable/outline_close_black_24" />
+
+                <TextView
+                    android:id="@+id/count_text_bm"
+                    android:layout_width="74dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textSize="24sp" />
+
+                <ImageButton
+                    android:id="@+id/ib_share_bm"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onShare"
+                    app:srcCompat="@drawable/outline_share_black_24"
+                    tools:srcCompat="@drawable/outline_share_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_del_bm"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onBookmarks"
+                    app:srcCompat="@drawable/outline_grade_24"
+                    tools:srcCompat="@drawable/outline_grade_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_rename_bm"
+                    android:layout_width="58dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onRename"
+                    app:srcCompat="@drawable/baseline_drive_file_rename_outline_black_24" />
+
+                <ImageButton
+                    android:id="@+id/ib_goto"
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:onClick="onMove"
+                    app:srcCompat="@drawable/outline_open_in_browser_black_24" />
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTintMode="add"
+            app:fabSize="auto"
+            app:hoveredFocusedTranslationZ="6dp"
+            app:maxImageSize="40dp"
+            app:pressedTranslationZ="6dp"
+            app:srcCompat="@drawable/baseline_add_black_18" />
+
+        <include layout="@layout/content_main" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
