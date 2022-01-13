@@ -41,8 +41,8 @@ public class DocActivityVM extends ActivityViewModel<DocActivity> {
     //view
     private DocActivity activity;
     //data
-    private JSONObject jDoc;
-    private JSONArray content;
+    private JSONObject jDoc = new JSONObject();
+    private JSONArray content  = new JSONArray();;
     private ArrayList<IDocItem> docItems = new ArrayList<>();
     private String title;
 
