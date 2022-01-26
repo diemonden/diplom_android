@@ -160,9 +160,9 @@ public class MainActivity extends BindingActivity<ActivityMainBinding, MainActiv
         super.onBackPressed();
         Log.d("CDA", "onBackPressed Called");
         FragmentViewModel viewModel = getFragment().getViewModel();
-        if (viewModel instanceof IOnBackPressed)
-            ( (IOnBackPressed) viewModel).onBackPressed();
-        onSwitchFromFragment();
+        if (viewModel instanceof IOnBackPressed) 
+            if (!((IOnBackPressed) viewModel).onBackPressed())
+                onSwitchFromFragment();
     }
 
     @Override
