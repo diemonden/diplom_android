@@ -44,7 +44,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class BookmarksFragmentVM extends FragmentViewModel<BookmarksFragment>
 implements IRenameElement,
-        IToolbarMain {
+        IToolbarMain,
+        IOnBackPressed {
     //view
     private Fragment fragment;
     private FragmentManager fragmentManager;
@@ -369,5 +370,9 @@ implements IRenameElement,
     public void onShare(View view){
         //тут нет функционала даже на сервере
     }
-
+                
+    @Override
+    public boolean onBackPressed() {
+        return false;
+    }
 }
