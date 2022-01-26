@@ -210,15 +210,19 @@ public class MainActivity extends BindingActivity<ActivityMainBinding, MainActiv
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             int id = item.getItemId();
+            BindingFragment fragment = getFragment();
             switch (id) {
                 case R.id.nav_home:
-                    onSwitchFromFragment();
-                    navController.navigate(R.id.nav_home, null);
-                    fab.setVisibility(View.VISIBLE);
+                    if (!(fragment instanceof HomeFragment)) {
+                        onBackPressed();
+                        navController.navigate(R.id.nav_home, null);
+                    }
                     break;
                 case R.id.nav_bookmarks:
-                    onSwitchFromFragment();
-                    navController.navigate(R.id.nav_bookmarks, null);
+                    if (!(fragment instanceof BookmarksFragment)) {
+                        onSwitchFromFragment();
+                        navController.navigate(R.id.nav_bookmarks, null);
+                    }
                     break;
                 case R.id.nav_shared:
                     //onSwitchFromFragment();
